@@ -1,14 +1,41 @@
 # flutter_android_lifecycle
 
-A new Flutter plugin to enable developer get android activity lifecycle notifications from dart.
+A new Flutter plugin to enable flutter developer get android activity lifecycle notifications from dart.
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.io/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+currently, this package supports three lifecycle notifications:
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+    - OnStart
+    - OnResume
+    - OnPause
+
+To use this package, all you have to do is
+
+- add flutter_android_lifecycle to your pubspec.yaml
+- change your MainActivity.java or MainActivity.kt to extend FlutterAndroidLifecycleActivity
+- Then you can start listening on notification lifecycle with these codes inside initState of your flutter application
+
+for OnStart
+```
+    FlutterAndroidLifecycle.listenToOnStartStream().listen((_) {
+          print("ONSTART CALLED");
+        });
+```
+
+for OnResume
+```
+    FlutterAndroidLifecycle.listenToOnResumeStream().listen((_) {
+          print("ONRESUME CALLED");
+        });
+```
+
+for OnPause
+```
+    FlutterAndroidLifecycle.listenToOnPauseStream().listen((_) {
+          print("ONPAUSE CALLED");
+        });
+```
+
+# Contributor
+- Angga Dwi Arifandi (angga.dwi@oval.id)
