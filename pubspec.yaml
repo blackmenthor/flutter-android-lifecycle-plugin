@@ -1,8 +1,8 @@
 name: flutter_android_lifecycle
-description: A new Flutter plugin to enable developer get android activity lifecycle notifications from dart.
+description: Flutter plugin to get android lifecycle notifications from dart.
 version: 0.0.1
-author:
-homepage:
+author: Angga Dwi Arifandi <angga.dwi@oval.id>
+homepage: https://github.com/blackmenthor/flutter-android-lifecycle-plugin
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
