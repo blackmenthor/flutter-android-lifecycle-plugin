@@ -37,5 +37,11 @@ for OnPause
         });
 ```
 
+# Version
+- 0.0.1
+Initial Upload
+- 0.0.1+2
+Add swift version on podspec
+
 # Contributor
 - Angga Dwi Arifandi (angga.dwi@oval.id)
