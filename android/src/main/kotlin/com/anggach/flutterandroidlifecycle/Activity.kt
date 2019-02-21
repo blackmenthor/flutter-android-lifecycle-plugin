@@ -129,4 +129,9 @@ open class FlutterAndroidLifecycleActivity: FlutterActivity() {
         this.onPauseStreamHandler!!.handleIntent(this, intent)
     }
 
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        this.intent = intent
+    }
+
 }

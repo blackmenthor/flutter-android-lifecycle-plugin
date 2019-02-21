@@ -42,6 +42,8 @@ for OnPause
 Initial Upload
 - 0.0.1+2
 Add swift version on podspec
+- 0.0.1+3
+Add override onNewIntent to set new intent on Activity
 
 # Contributor
 - Angga Dwi Arifandi (angga.dwi@oval.id)
