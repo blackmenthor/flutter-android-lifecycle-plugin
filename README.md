@@ -44,6 +44,8 @@ Initial Upload
 Add swift version on podspec
 - 0.0.1+3
 Add override onNewIntent to set new intent on Activity
+- 0.0.1+4
+Upgrade kotlin version to 1.3.21
 
 # Contributor
-- Angga Dwi Arifandi (angga.dwi@oval.id)
+- Angga Dwi Arifandi (anggadwiarifandi96@gmail.com)
