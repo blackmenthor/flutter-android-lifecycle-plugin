@@ -48,6 +48,8 @@ for OnPause
     - Upgrade kotlin version to 1.3.21
 - 0.0.2
     - Added `FragmentActivity` support
+- 1.0.0
+    - Added AndroidX support
 
 # Contributor
 - Angga Dwi Arifandi (anggadwiarifandi96@gmail.com)
