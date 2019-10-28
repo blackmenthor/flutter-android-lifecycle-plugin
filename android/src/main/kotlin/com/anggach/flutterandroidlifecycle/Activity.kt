@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import io.flutter.app.FlutterActivity
+import io.flutter.app.FlutterFragmentActivity
 import io.flutter.plugin.common.EventChannel
 
 class OnStartStreamHandler: EventChannel.StreamHandler {
@@ -88,6 +89,56 @@ class OnPauseStreamHandler: EventChannel.StreamHandler {
 }
 
 open class FlutterAndroidLifecycleActivity: FlutterActivity() {
+
+    private var onStartStreamHandler: OnStartStreamHandler? = null
+    private var onResumeStreamHandler: OnResumeStreamHandler? = null
+    private var onPauseStreamHandler: OnPauseStreamHandler? = null
+
+    private fun setUpOnStartStream(onStartStreamHandler: OnStartStreamHandler?) {
+        FlutterAndroidLifecyclePlugin.setUpOnStart(onStartStreamHandler)
+    }
+
+    private fun setUpOnResumeStream(onResumeStreamHandler: OnResumeStreamHandler?) {
+        FlutterAndroidLifecyclePlugin.setUpOnResume(onResumeStreamHandler)
+    }
+
+    private fun setUpOnPauseStream(onPauseStreamHandler: OnPauseStreamHandler?) {
+        FlutterAndroidLifecyclePlugin.setUpOnPause(onPauseStreamHandler)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        this.onStartStreamHandler = this.onStartStreamHandler ?: OnStartStreamHandler()
+        setUpOnStartStream(this.onStartStreamHandler)
+        val intent = Intent()
+        this.onStartStreamHandler!!.handleIntent(this, intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        this.onResumeStreamHandler = this.onResumeStreamHandler ?: OnResumeStreamHandler()
+        setUpOnResumeStream(this.onResumeStreamHandler)
+        val intent = Intent()
+        this.onResumeStreamHandler!!.handleIntent(this, intent)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        this.onPauseStreamHandler = this.onPauseStreamHandler ?: OnPauseStreamHandler()
+        setUpOnPauseStream(this.onPauseStreamHandler)
+        val intent = Intent()
+        this.onPauseStreamHandler!!.handleIntent(this, intent)
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        this.intent = intent
+    }
+
+}
+
+
+open class FlutterAndroidLifecycleFragmentActivity: FlutterFragmentActivity() {
 
     private var onStartStreamHandler: OnStartStreamHandler? = null
     private var onResumeStreamHandler: OnResumeStreamHandler? = null
