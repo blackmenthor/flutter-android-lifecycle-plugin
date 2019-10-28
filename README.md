@@ -39,13 +39,15 @@ for OnPause
 
 # Version
 - 0.0.1
-Initial Upload
+    - Initial Upload
 - 0.0.1+2
-Add swift version on podspec
+    - Add swift version on podspec
 - 0.0.1+3
-Add override onNewIntent to set new intent on Activity
+    - Add override onNewIntent to set new intent on Activity
 - 0.0.1+4
-Upgrade kotlin version to 1.3.21
+    - Upgrade kotlin version to 1.3.21
+- 0.0.2
+    - Added `FragmentActivity` support
 
 # Contributor
 - Angga Dwi Arifandi (anggadwiarifandi96@gmail.com)

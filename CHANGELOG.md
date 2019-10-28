@@ -13,3 +13,7 @@ add override onNewIntent and bumpVersion
 ## 0.0.1+4
 
 Upgrade kotlin version to 1.3.21
+
+## 0.0.2
+
+Added `FragmentActivity` support
